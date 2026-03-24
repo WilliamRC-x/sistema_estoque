@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -5,39 +6,37 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         Produto menu = new Produto();
+        do {
+            System.out.println("==> Seja bem-vindo <==");
+            System.out.println("\n1 - Cadastrar Produto");
+            System.out.println("2 - Listar Produtos");
+            System.out.println("3 - Mostrar Valor Total do Estoque");
+            System.out.println("0 - Sair");
 
-        System.out.println("==> Seja bem-vindo <==");
-        System.out.println("\n1 - Cadastrar Produto");
-        System.out.println("2 - Listar Produtos");
-        System.out.println("3 - Mostrar Valor Total do Estoque");
-        System.out.println("0 - Sair");
+            menu.op = input.nextInt();
 
-        menu.op = input.nextInt();
+            switch (menu.op) {
+                case 1:
+                    ArrayList<String> produto = new ArrayList<String>();
+                    System.out.print("Digite o nome do produto: ");
+                    produto.add(input.next());
 
-        switch (menu.op) {
-            case 1:
-                Produto produto1 = new Produto();
+                    ArrayList<Double> preco = new ArrayList<Double>();
+                    System.out.print("Qual o valor do produto? R$");
+                    preco.add(input.nextDouble());
 
-                System.out.print("Produto: ");
-                produto1.nome = input.nextLine();
+                    ArrayList<Integer> quantidade = new ArrayList<Integer>();
+                    System.out.print("Quantidade de produto disponível: ");
+                    quantidade.add(input.nextInt());
 
-                System.out.print("Preço: R$");
-                produto1.preco = input.nextDouble();
-
-                System.out.print("Quantidade: ");
-                produto1.quantidade = input.nextInt();
-
-                System.out.println("\nProduto: "+produto1.nome);
-                System.out.println("Preço: R$"+produto1.preco);
-                System.out.println("Quantidade: "+produto1.quantidade);
-
-                produto1.valorTotal();
-
-            case 2:
-
-        }
+                case 2:
 
 
 
+
+                case 0:
+                    break;
+            }
+        }while (menu.op != 0);
     }
 }

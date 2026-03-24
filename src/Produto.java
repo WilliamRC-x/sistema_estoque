@@ -1,6 +1,5 @@
 public class Produto {
 
-    String nome;
     double preco;
     int quantidade;
     int op;
